@@ -1,29 +1,47 @@
-const colors = {
-  color1: { value: "#fff", locked: false },
-  color2: { value: "#fff", locked: false },
-  color3: { value: "#fff", locked: false },
-  color4: { value: "#fff", locked: false },
-  color5: { value: "#fff", locked: false },
-};
+const createRandomColor = () =>
+  Math.floor(Math.random() * 16777215).toString(16);
 
-// const colors = document.getElementsByClassName("colors");
+const colors = [
+  { value: `#${createRandomColor()}`, locked: false },
+  { value: `#${createRandomColor()}`, locked: false },
+  { value: `#${createRandomColor()}`, locked: false },
+  { value: `#${createRandomColor()}`, locked: false },
+  { value: `#${createRandomColor()}`, locked: false },
+];
+
+const colorBoxes = document.getElementsByClassName("color-box");
+const generateBtn = document.getElementById("generate");
 
 const lockColor = (colors, color) => {
-  colors[`color${color}`].locked = true;
+  colors[color].locked = true;
 
   return colors;
 };
 
-const createRandomColor = () =>
-  Math.floor(Math.random() * 16777215).toString(16);
+for (let i = 0; i < colorBoxes.length; i++) {
+  colorBoxes[i].onclick = () => lockColor(colors, i);
+}
 
-const generateColor = (colors) => {
-  for (const color in colors) {
-    if (!color.locked) {
-      colors[color].value = `#${createRandomColor()}`;
-    }
+const updateColors = (colors) => {
+  // console.log((colorBoxes[0].style.backgroundColor = "red"));
+  console.log(colors[0].value);
+  for (let i = 0; i < colorBoxes.length; i++) {
+    colorBoxes[i].style.backgroundColor = `${colors[i].value}`;
   }
-  //   return colors;
 };
 
-generateColor(colors);
+const generateColor = (colors) => {
+  console.log(colors);
+
+  colors.forEach((color) => {
+    if (!color.locked) {
+      color.value = `#${createRandomColor()}`;
+    }
+  });
+
+  updateColors(colors);
+};
+
+generateBtn.onclick = () => {
+  generateColor(colors);
+};
