@@ -17,33 +17,38 @@ body{
     align-items: center;
     text-align: center;
 }
-.lock-btn{
-    display: none;
+.lock-btn {
+  border: none;
+  background-color: transparent;
+  margin-bottom: 80px;
 }
-footer{
- display: flex;
- flex-direction: row;
- justify-content: space-around;
- align-items: center;
- text-align: center;
- width: 100%;
+.hex-number{
+  margin-top: 80px;
+  color: white;
+}
 
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
 }
-.unlock-btn, .lock-btn{
-    border: none;
-    background-color: transparent;
-}
-.icon-btn{
-   margin: 40px;
+
+.icon-btn {
+  margin: 40px;
 }
 #Library, #generate, #save{
     background-color: rgb(1, 1, 49);
     text-align: center;
     padding: 14px 25px;
-    border-radius: 10px;
+    border-radius: 15px;
     color: white;
+    border: none;
 }
-#main-container{
+section{
     display: none;
     position: fixed;
     padding-top: 100px;
@@ -53,36 +58,50 @@ footer{
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.582);
 }
 #color-save{
     display: none;
     background-color: white;
-    width: 490px;
-    height: 380px;
+    width: 450px;
+    height: 230px;
     z-index: 1;
-    margin: auto;
-    margin-top: -70px;
-    border-radius: 15px;
+    margin:  auto;
+    margin-top: 120px;
+    border-radius: 25px;
     font-size: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     text-align: center;
 }
+#x {
+  padding: 10px;
+  color: rgb(78, 78, 78);
+}
+#y{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
 #close-color-save{
-    background-color: black;
+    background-color: rgb(78, 78, 78);
     color: white;
-    position: absolute;
-    top: 0;
-    right: 0;
+    padding: 12px;
+    border: none;
+    float: right;
+    border-radius: 0px 15px 0 6px;
+}
+#color-save-input{
+  height: 35px;
+  width: 220px;
 }
 #save-color-btn{
     background-color: rgb(1, 1, 49);
     text-align: center;
-    padding: 14px 25px;
+    padding: 10px 35px;
     border-radius: 10px;
+    margin-top: 30px;
+    border: none;
     color: white;
 }
 #color-library{

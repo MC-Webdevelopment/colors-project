@@ -6,69 +6,81 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./styles/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <title>Document</title>
-</head>
-
-<head id="colors">
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./styles/style.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
     integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
   <title>Document</title>
 </head>
 
 
-</html>
-
 <body>
   <main id="colors">
     <div class="color-box">
       <h2 class="hex-number"></h2>
-      <button class="unlock-btn" id="first-unlock-btn"><i class="fa fa-lock-open fa-2x"></i></button>
-      <button class="lock-btn" id="first-lock-btn"><i class="fa fa-lock fa-2x lock-icon"></i></button>
+
+      <button class="lock-btn">
+        <i class="fa fa-lock fa-2x lock-icon"></i>
+        <i class="fa fa-lock-open fa-2x"></i>
+      </button>
     </div>
+
     <div class="color-box">
       <h2 class="hex-number"></h2>
-      <button class="unlock-btn" id="second-unlock-btn"><i class="fa fa-lock-open fa-2x unlock-icon"></i></button>
-      <button class="lock-btn" id="second-lock-btn"><i class="fa fa-lock fa-2x lock-icon"></i></button>
+
+      <button class="lock-btn">
+        <i class="fa fa-lock fa-2x lock-icon"></i>
+        <i class="fa fa-lock-open fa-2x unlock-icon"></i>
+      </button>
     </div>
+
     <div class="color-box">
       <h2 class="hex-number"></h2>
-      <button class="unlock-btn" id="third-unlock-btn"><i class="fas fa-lock-open fa-2x unlock-icon"></i></button>
-      <button class="lock-btn" id="third-lock-btn"><i class="fa fa-lock fa-2x lock-icon"></i></button>
+
+      <button class="lock-btn">
+        <i class="fa fa-lock fa-2x lock-icon"></i>
+        <i class="fas fa-lock-open fa-2x unlock-icon"></i>
+      </button>
     </div>
+
     <div class="color-box">
       <h2 class="hex-number"></h2>
-      <button class="unlock-btn" id="fourth-unlock-btn"><i class="fa fa-lock-open fa-2x unlock-icon"></i></button>
-      <button class="lock-btn" id="fourth-lock-btn"><i class="fa fa-lock fa-2x lock-icon"></i></button>
+
+      <button class="lock-btn">
+        <i class="fa fa-lock fa-2x lock-icon"></i>
+        <i class="fa fa-lock-open fa-2x unlock-icon"></i>
+      </button>
     </div>
+
     <div class="color-box">
       <h2 class="hex-number"></h2>
-      <button class="unlock-btn" id="fifth-unlock-btn"><i class="fas fa-lock-open fa-2x unlock-icon"></i></button>
-      <button class="lock-btn" id="fifth-lock-btn"><i class="fa fa-lock fa-2x lock-icon"></i></button>
+
+      <button class="lock-btn">
+        <i class="fa fa-lock fa-2x lock-icon"></i>
+        <i class="fas fa-lock-open fa-2x unlock-icon"></i>
+      </button>
     </div>
   </main>
   <section id="main-container">
     <div id="color-save">
-      <button id="close-color-save">&#8272;</button>
-      <h2>Give a name to your pallete</h2>
-      <input type="text">
-      <button id="save-color-btn">Save</button>
+      <button id="close-color-save"><i class="fas fa-times"></i></button>
+      <div id="x">
+        <h1>Give a name to your pallete</h1>
+      </div>
+      <div id="y">
+        <input type="text" id="color-save-input">
+        <button id="save-color-btn">Save</button>
+      </div>
     </div>
     <div id="color-library">
 
     </div>
     <div id="save-hexCode">
 
+    </div>
   </section>
-  </div>
   <footer>
     <div class="icon-btn">
       <button id="Library">
-        <i class="fa fa-book-open  icons"></i>
+        <i class="fa fa-book-open icons"></i>
       </button>
       <p>Library</p>
     </div>
