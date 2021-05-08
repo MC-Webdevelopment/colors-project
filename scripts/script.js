@@ -14,7 +14,7 @@ let library = [];
 const colorBoxes = document.getElementsByClassName("color-box");
 const generateBtn = document.getElementById("generate");
 
-const libraryBtn = document.getElementById("Library");
+// const libraryBtn = document.getElementById("Library");
 const lockButtons = [...document.getElementsByClassName("lock-btn")];
 const hexColors = [...document.getElementsByClassName("hex-number")];
 
@@ -36,10 +36,10 @@ const toggleLockButton = (button) => {
   }
 };
 
-const loadLibrary = () => {
-  const getLibrary = JSON.parse(localStorage.getItem("library"));
-  getLibrary && (library = getLibrary);
-};
+// const loadLibrary = () => {
+//   const getLibrary = JSON.parse(localStorage.getItem("library"));
+//   getLibrary && (library = getLibrary);
+// };
 
 const updateColors = (colors) => {
   for (let i = 0; i < colorBoxes.length; i++) {
@@ -114,13 +114,24 @@ lockButtons.forEach((button, i) => {
 const saveBtn = document.getElementById("save");
 const section = document.getElementById("main-container");
 const colorSave = document.getElementById("color-save");
+const libraryBtn = document.getElementById("Library");
+const colorLibrary = document.getElementById("color-library");
+const colorSaveClose = document.getElementById("color-save-close");
+const colorLibraryClose = document.getElementById("color-library-close")
 
 saveBtn.onclick = () => {
   section.style.display = "block";
   colorSave.style.display = "block";
 }
-const closeColorSave = document.getElementById("close-color-save");
-closeColorSave.onclick = () =>{
+colorSaveClose.onclick = () =>{
   section.style.display = "none";
   colorSave.style.display = "none";
+}
+libraryBtn.onclick = () => {
+  colorLibrary.style.display = "block";
+  section.style.display = "block";
+}
+colorLibraryClose.onclick = () => {
+  colorLibrary.style.display = "none";
+  section.style.display = "none";
 }

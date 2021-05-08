@@ -41,12 +41,12 @@ footer {
   margin: 40px;
 }
 #Library, #generate, #save{
-    background-color: rgb(1, 1, 49);
-    text-align: center;
-    padding: 14px 25px;
-    border-radius: 15px;
-    color: white;
-    border: none;
+  background-color: rgb(1, 1, 49);
+  text-align: center;
+  padding: 14px 25px;
+  border-radius: 15px;
+  color: white;
+  border: none;
 }
 section{
     display: none;
@@ -72,40 +72,59 @@ section{
     font-size: 15px;
     text-align: center;
 }
-#x {
+.pallet{
   padding: 10px;
   color: rgb(78, 78, 78);
 }
-#y{
+#popUp-body{
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
   align-items: center;
 }
-#close-color-save{
-    background-color: rgb(78, 78, 78);
-    color: white;
-    padding: 12px;
-    border: none;
-    float: right;
-    border-radius: 0px 15px 0 6px;
+#color-save-close{
+  background-color: rgb(78, 78, 78);
+  color: white;
+  padding: 12px;
+  border: none;
+  float: right;
+  border-radius: 0px 15px 0 6px;
 }
 #color-save-input{
   height: 35px;
   width: 220px;
 }
 #save-color-btn{
-    background-color: rgb(1, 1, 49);
-    text-align: center;
-    padding: 10px 35px;
-    border-radius: 10px;
-    margin-top: 30px;
-    border: none;
-    color: white;
+  background-color: rgb(1, 1, 49);
+  text-align: center;
+  padding: 10px 35px;
+  border-radius: 10px;
+  margin-top: 30px;
+  border: none;
+  color: white;
 }
 #color-library{
     display: none;
+    display: none;
+    background-color: white;
+    width: 600px;
+    height: 330px;
+    z-index: 1;
+    margin:  auto;
+    margin-top: 75px;
+    border-radius: 25px;
+    font-size: 15px;
+    text-align: center;
+    overflow: scroll;
+}
+#color-library-close{
+  background-color: rgb(78, 78, 78);
+  color: white;
+  padding: 16px;
+  border: none;
+  float: right;
+  border-radius: 0px 0px 0 6px;
 }
 #save-hexCode{
     display: none;
