@@ -1,29 +1,70 @@
-const colors = {
-  color1: { value: "#fff", locked: false },
-  color2: { value: "#fff", locked: false },
-  color3: { value: "#fff", locked: false },
-  color4: { value: "#fff", locked: false },
-  color5: { value: "#fff", locked: false },
+const createRandomColor = () =>
+  Math.floor(Math.random() * 16777215).toString(16);
+
+const colors = [
+  { value: `#${createRandomColor()}`, locked: false },
+  { value: `#${createRandomColor()}`, locked: false },
+  { value: `#${createRandomColor()}`, locked: false },
+  { value: `#${createRandomColor()}`, locked: false },
+  { value: `#${createRandomColor()}`, locked: false },
+];
+
+let library = [];
+
+const colorBoxes = document.getElementsByClassName("color-box");
+const generateBtn = document.getElementById("generate");
+const saveBtn = document.getElementById("save");
+
+const loadLibrary = () => {
+  const getLibrary = JSON.parse(localStorage.getItem("library"));
+  getLibrary && (library = getLibrary);
 };
 
-// const colors = document.getElementsByClassName("colors");
+window.onload = () => loadLibrary();
+
+const save = (name, colors) => {
+  console.log(library);
+  library.push({ name, colors });
+  localStorage.setItem("library", JSON.stringify(library));
+  loadLibrary();
+};
+
+let i = 0;
+// saveBtn.onclick = () => {
+//   console.log("colors on save", colors);
+//   console.log("library on save", library);
+//   save(i, colors);
+//   i++;
+// };
+
+const colorPick = (pick) => {
+  colors = library[pick];
+};
 
 const lockColor = (colors, color) => {
-  colors[`color${color}`].locked = true;
+  colors[color].locked = true;
 
   return colors;
 };
 
-const createRandomColor = () =>
-  Math.floor(Math.random() * 16777215).toString(16);
+for (let i = 0; i < colorBoxes.length; i++) {
+  colorBoxes[i].onclick = () => lockColor(colors, i);
+}
+
+const updateColors = (colors) => {
+  for (let i = 0; i < colorBoxes.length; i++) {
+    colorBoxes[i].style.backgroundColor = `${colors[i].value}`;
+  }
+};
 
 const generateColor = (colors) => {
-  for (const color in colors) {
+  colors.forEach((color) => {
     if (!color.locked) {
-      colors[color].value = `#${createRandomColor()}`;
+      color.value = `#${createRandomColor()}`;
     }
-  }
-  //   return colors;
+  });
+
+  updateColors(colors);
 };
 
 generateColor(colors);
@@ -83,3 +124,14 @@ fifthLockBtn.addEventListener("click",()=>{
   fifthLockBtn.style.display = "none";
   fifthUnLockBtn.style.display = "block";
 })
+generateBtn.onclick = () => {
+  generateColor(colors);
+};
+
+const section = document.querySelector("#main container");
+const colorSave = document.querySelector("#color-save");
+// const save = document.querySelector("#save");
+// saveBtn.addEventListener("click", ()=>{
+//   section.style.display = "block";
+//   colorSave.style.display = "block";
+// })
