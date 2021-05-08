@@ -1,7 +1,7 @@
 const createRandomColor = () =>
   Math.floor(Math.random() * 16777215).toString(16);
 
-const colors = [
+let colors = [
   { value: `#${createRandomColor()}`, locked: false },
   { value: `#${createRandomColor()}`, locked: false },
   { value: `#${createRandomColor()}`, locked: false },
@@ -14,16 +14,25 @@ let library = [];
 const colorBoxes = document.getElementsByClassName("color-box");
 const generateBtn = document.getElementById("generate");
 const saveBtn = document.getElementById("save");
+const libraryBtn = document.getElementById("Library");
 
 const loadLibrary = () => {
   const getLibrary = JSON.parse(localStorage.getItem("library"));
   getLibrary && (library = getLibrary);
 };
 
-window.onload = () => loadLibrary();
+const updateColors = (colors) => {
+  for (let i = 0; i < colorBoxes.length; i++) {
+    colorBoxes[i].style.backgroundColor = `${colors[i].value}`;
+  }
+};
+
+window.onload = () => {
+  loadLibrary();
+  updateColors(colors);
+};
 
 const save = (name, colors) => {
-  console.log(library);
   library.push({ name, colors });
   localStorage.setItem("library", JSON.stringify(library));
   loadLibrary();
@@ -38,7 +47,8 @@ saveBtn.onclick = () => {
 };
 
 const colorPick = (pick) => {
-  colors = library[pick];
+  colors = pick.colors;
+  updateColors(colors);
 };
 
 const lockColor = (colors, color) => {
@@ -50,12 +60,6 @@ const lockColor = (colors, color) => {
 for (let i = 0; i < colorBoxes.length; i++) {
   colorBoxes[i].onclick = () => lockColor(colors, i);
 }
-
-const updateColors = (colors) => {
-  for (let i = 0; i < colorBoxes.length; i++) {
-    colorBoxes[i].style.backgroundColor = `${colors[i].value}`;
-  }
-};
 
 const generateColor = (colors) => {
   colors.forEach((color) => {
