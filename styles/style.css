@@ -1,28 +1,41 @@
-body{
-    margin: 0;
-    font-family: sans-serif;
+@keyframes savePanelTransition {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-#colors{
-    width: 100%;
-    height: 540px;
-    display: flex;
-    flex-direction: row;
+
+body {
+  margin: 0;
+  font-family: sans-serif;
 }
-.color-box{
-    width: 20%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
+button:hover {
+  cursor: pointer;
+}
+
+#colors {
+  width: 100%;
+  height: 540px;
+  display: flex;
+  flex-direction: row;
+}
+.color-box {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
 }
 .lock-btn {
   border: none;
   background-color: transparent;
   margin-bottom: 80px;
 }
-.hex-number{
+.hex-number {
   margin-top: 80px;
   color: white;
 }
@@ -40,73 +53,83 @@ footer {
 .icon-btn {
   margin: 40px;
 }
-#Library, #generate, #save{
-    background-color: rgb(1, 1, 49);
-    text-align: center;
-    padding: 14px 25px;
-    border-radius: 15px;
-    color: white;
-    border: none;
+#Library,
+#generate,
+#save {
+  background-color: rgb(1, 1, 49);
+  text-align: center;
+  padding: 14px 25px;
+  border-radius: 15px;
+  color: white;
+  border: none;
 }
-section{
-    display: none;
-    position: fixed;
-    padding-top: 100px;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.582);
+section {
+  display: none;
+  position: fixed;
+  padding-top: 100px;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.582);
+  animation-name: savePanelTransition;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
 }
-#color-save{
-    display: none;
-    background-color: white;
-    width: 450px;
-    height: 230px;
-    z-index: 1;
-    margin:  auto;
-    margin-top: 120px;
-    border-radius: 25px;
-    font-size: 15px;
-    text-align: center;
+#color-save {
+  display: none;
+  background-color: white;
+  width: 450px;
+  height: 230px;
+  z-index: 1;
+  margin: auto;
+  margin-top: 120px;
+  border-radius: 25px;
+  font-size: 15px;
+  text-align: center;
+  animation-name: savePanelTransition;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
 }
+
 #x {
   padding: 10px;
   color: rgb(78, 78, 78);
 }
-#y{
+
+#y {
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
   align-items: center;
 }
-#close-color-save{
-    background-color: rgb(78, 78, 78);
-    color: white;
-    padding: 12px;
-    border: none;
-    float: right;
-    border-radius: 0px 15px 0 6px;
+#close-color-save {
+  background-color: rgb(78, 78, 78);
+  color: white;
+  padding: 12px;
+  border: none;
+  float: right;
+  border-radius: 0px 15px 0 6px;
 }
-#color-save-input{
+#color-save-input {
   height: 35px;
   width: 220px;
 }
-#save-color-btn{
-    background-color: rgb(1, 1, 49);
-    text-align: center;
-    padding: 10px 35px;
-    border-radius: 10px;
-    margin-top: 30px;
-    border: none;
-    color: white;
+#save-color-btn {
+  background-color: rgb(1, 1, 49);
+  text-align: center;
+  padding: 10px 35px;
+  border-radius: 10px;
+  margin-top: 30px;
+  border: none;
+  color: white;
 }
-#color-library{
-    display: none;
+#color-library {
+  display: none;
 }
-#save-hexCode{
-    display: none;
+#save-hexCode {
+  display: none;
 }

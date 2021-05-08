@@ -65,14 +65,6 @@ const save = (name, colors) => {
   loadLibrary();
 };
 
-let i = 0;
-// saveBtn.onclick = () => {
-//   console.log("colors on save", colors);
-//   console.log("library on save", library);
-//   save(i, colors);
-//   i++;
-// };
-
 const colorPick = (pick) => {
   colors = pick.colors;
   updateColors(colors);
@@ -114,13 +106,29 @@ lockButtons.forEach((button, i) => {
 const saveBtn = document.getElementById("save");
 const section = document.getElementById("main-container");
 const colorSave = document.getElementById("color-save");
-
-saveBtn.onclick = () => {
-  section.style.display = "block";
-  colorSave.style.display = "block";
-}
+const saveColorBtn = document.getElementById("save-color-btn");
+const colorSaveInput = document.getElementById("color-save-input");
 const closeColorSave = document.getElementById("close-color-save");
-closeColorSave.onclick = () =>{
-  section.style.display = "none";
-  colorSave.style.display = "none";
-}
+
+const toggleSavePanel = () => {
+  if (section.style.display === "block") {
+    colorSave.style.display = "none";
+    section.style.display = "none";
+  } else {
+    section.style.display = "block";
+    colorSave.style.display = "block";
+  }
+
+  colorSaveInput.value = null;
+};
+
+saveBtn.onclick = () => toggleSavePanel();
+
+closeColorSave.onclick = () => toggleSavePanel();
+
+saveColorBtn.onclick = () => {
+  if (colorSaveInput.value) {
+    save(colorSaveInput.value, colors);
+    toggleSavePanel();
+  } else alert("Please enter palette name");
+};
