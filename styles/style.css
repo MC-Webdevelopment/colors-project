@@ -1,38 +1,38 @@
-body{
-    margin: 0;
+body {
+  margin: 0;
 }
-#colors{
-    width: 100%;
-    height: 80%;
-    display: flex;
-    flex-direction: row;
+#colors {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
 }
-.color-box{
-    width: 20%;
-    border: 2px solid black;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-    height: 570px;
+.color-box {
+  width: 20%;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  height: 570px;
 }
-.lock-btn{
-    display: none;
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
 }
-footer{
- display: flex;
- flex-direction: row;
- justify-content: space-around;
- align-items: center;
- text-align: center;
- width: 100%;
- height: 100%;
+
+.lock-btn {
+  border: none;
+  background-color: transparent;
 }
-.unlock-btn, .lock-btn{
-    border: none;
-    background-color: white;
-}
-.icon-btn{
-   margin: 40px;
+
+.icon-btn {
+  margin: 40px;
 }
