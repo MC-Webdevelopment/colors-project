@@ -16,6 +16,15 @@ const generateBtn = document.getElementById("generate");
 
 const libraryBtn = document.getElementById("Library");
 const lockButtons = [...document.getElementsByClassName("lock-btn")];
+const hexColors = [...document.getElementsByClassName("hex-number")];
+
+const copied = () => {};
+
+hexColors.forEach((hex) => {
+  hex.onclick = () => {
+    navigator.clipboard.writeText(hex.textContent).then(copied);
+  };
+});
 
 const toggleLockButton = (button) => {
   if (button.children[0].style.display === "none") {
