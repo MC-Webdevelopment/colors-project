@@ -40,7 +40,7 @@ button:hover {
   color: white;
 }
 
-section{
+section {
     display: none;
     position: fixed;
     padding-top: 100px;
@@ -51,8 +51,11 @@ section{
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.582);
+    animation-name: savePanelTransition;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
 }
-#color-save{
+#color-save {
     display: none;
     background-color: white;
     width: 450px;
@@ -63,19 +66,22 @@ section{
     border-radius: 25px;
     font-size: 15px;
     text-align: center;
+    animation-name: savePanelTransition;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
 }
-.pallet{
+.pallet {
   padding: 10px;
   color: rgb(78, 78, 78);
 }
-#popUp-body{
+#popUp-body {
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
   align-items: center;
 }
-#color-save-close{
+#color-save-close {
   background-color: rgb(78, 78, 78);
   color: white;
   padding: 15px;
@@ -87,7 +93,7 @@ section{
   height: 35px;
   width: 220px;
 }
-#save-color-btn{
+#save-color-btn {
   background-color: rgb(1, 1, 49);
   text-align: center;
   padding: 10px 35px;
@@ -96,7 +102,7 @@ section{
   border: none;
   color: white;
 }
-#color-library{
+#color-library {
     display: none;
     display: none;
     background-color: white;
@@ -110,7 +116,7 @@ section{
     text-align: center;
     overflow: scroll;
 }
-#color-library-close{
+#color-library-close {
   background-color: rgb(78, 78, 78);
   color: white;
   padding: 16px;
@@ -122,8 +128,22 @@ section{
 #color-library-close:hover {
   background-color: rgb(1, 1, 49);
 }
-#save-hexCode{
+#save-hexCode {
     display: none;
+    background-color: white;
+    width: 450px;
+    height: 200px;
+    z-index: 1;
+    margin:  auto;
+    margin-top: 150px;
+    border-radius: 25px;
+    font-size: 15px;
+    text-align: center;
+}
+#copied-clipboard{
+  padding: 25px;
+  color: rgb(78, 78, 78);
+  font-weight: bold;
 }
 
 footer {
@@ -139,7 +159,9 @@ footer {
 .icon-btn {
   margin: 40px;
 }
-#Library, #generate, #save{
+#Library,
+#generate,
+#save {
   background-color: rgb(1, 1, 49);
   text-align: center;
   padding: 14px 25px;

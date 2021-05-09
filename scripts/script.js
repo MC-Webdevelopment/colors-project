@@ -13,16 +13,21 @@ let library = [];
 
 const colorBoxes = document.getElementsByClassName("color-box");
 const generateBtn = document.getElementById("generate");
-
-// const libraryBtn = document.getElementById("Library");
 const lockButtons = [...document.getElementsByClassName("lock-btn")];
 const hexColors = [...document.getElementsByClassName("hex-number")];
+const saveHexCode = document.getElementById("save-hexCode");
 
 const copied = () => {};
 
 hexColors.forEach((hex) => {
   hex.onclick = () => {
     navigator.clipboard.writeText(hex.textContent).then(copied);
+    section.style.display = "block";
+    saveHexCode.style.display = "block";
+    setTimeout(function() {
+      section.style.display = "none";
+      saveHexCode.style.display = "none";
+     }, 1500);
   };
 });
 
@@ -36,10 +41,10 @@ const toggleLockButton = (button) => {
   }
 };
 
-// const loadLibrary = () => {
-//   const getLibrary = JSON.parse(localStorage.getItem("library"));
-//   getLibrary && (library = getLibrary);
-// };
+const loadLibrary = () => {
+  const getLibrary = JSON.parse(localStorage.getItem("library"));
+  getLibrary && (library = getLibrary);
+};
 
 const updateColors = (colors) => {
   for (let i = 0; i < colorBoxes.length; i++) {
@@ -153,3 +158,4 @@ saveColorBtn.onclick = () => {
     toggleSavePanel();
   } else alert("Please enter palette name");
 };
+
