@@ -1,7 +1,7 @@
 # Welcome! 👋
 
 Your challenge is to build out this cool color generating website that helps the user to pick a color palette for their designs!
-
+ 
 ### Your users should be able to:
 - Generate random colors at a click of a button
 - Display the colors on the screen with their hexadecimal color representation

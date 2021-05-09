@@ -1,0 +1,49 @@
+.container{
+    width: 100%;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.199);
+}
+.colores-div{
+    display: flex;
+    flex-direction: row;
+    height: 650px;
+    width: 60%;
+    margin: auto;
+}
+.color{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.color-1{
+    background-color: aqua;
+}
+.color-2{
+    background-color:rebeccapurple;
+}
+.color-3{
+    background-color: red;
+}
+.color-4{
+    background-color: blue;
+}
+.color-5{
+    background-color: yellow;
+    
+}
+.buttons-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 50px ;
+}
+.buttons-div button{
+    margin: 20px 150px 20px 150px;
+    padding: 10px 20px 10px;
+}
+.like-icon{
+    font-size: 30px;
+}
