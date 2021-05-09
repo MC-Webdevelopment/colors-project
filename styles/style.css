@@ -27,27 +27,6 @@ body{
   color: white;
 }
 
-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  height: 100%;
-}
-
-.icon-btn {
-  margin: 40px;
-}
-#Library, #generate, #save{
-  background-color: rgb(1, 1, 49);
-  text-align: center;
-  padding: 14px 25px;
-  border-radius: 15px;
-  color: white;
-  border: none;
-}
 section{
     display: none;
     position: fixed;
@@ -86,7 +65,7 @@ section{
 #color-save-close{
   background-color: rgb(78, 78, 78);
   color: white;
-  padding: 12px;
+  padding: 15px;
   border: none;
   float: right;
   border-radius: 0px 15px 0 6px;
@@ -126,6 +105,32 @@ section{
   float: right;
   border-radius: 0px 0px 0 6px;
 }
+#color-save-close:hover,
+#color-library-close:hover {
+  background-color: rgb(1, 1, 49);
+}
 #save-hexCode{
     display: none;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.icon-btn {
+  margin: 40px;
+}
+#Library, #generate, #save{
+  background-color: rgb(1, 1, 49);
+  text-align: center;
+  padding: 14px 25px;
+  border-radius: 15px;
+  color: white;
+  border: none;
 }
