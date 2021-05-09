@@ -1,28 +1,41 @@
-body{
-    margin: 0;
-    font-family: sans-serif;
+@keyframes savePanelTransition {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-#colors{
-    width: 100%;
-    height: 540px;
-    display: flex;
-    flex-direction: row;
+
+body {
+  margin: 0;
+  font-family: sans-serif;
 }
-.color-box{
-    width: 20%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
+button:hover {
+  cursor: pointer;
+}
+
+#colors {
+  width: 100%;
+  height: 540px;
+  display: flex;
+  flex-direction: row;
+}
+.color-box {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
 }
 .lock-btn {
   border: none;
   background-color: transparent;
   margin-bottom: 80px;
 }
-.hex-number{
+.hex-number {
   margin-top: 80px;
   color: white;
 }
@@ -70,7 +83,7 @@ section{
   float: right;
   border-radius: 0px 15px 0 6px;
 }
-#color-save-input{
+#color-save-input {
   height: 35px;
   width: 220px;
 }
