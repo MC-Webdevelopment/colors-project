@@ -85,7 +85,11 @@ const toggleLockButton = (button) => {
 const checkLocks = (colors) => {
   lockButtons.forEach((button, i) => {
     if (colors[i].locked) {
-      toggleLockButton(button);
+      button.children[0].style.display = "block";
+      button.children[1].style.display = "none";
+    } else {
+      button.children[0].style.display = "none";
+      button.children[1].style.display = "block";
     }
   });
 };
@@ -127,6 +131,7 @@ const updateColors = (colors) => {
   for (let i = 0; i < colorBoxes.length; i++) {
     colorBoxes[i].style.backgroundColor = `${colors[i].value}`;
     colorBoxes[i].firstElementChild.textContent = colors[i].value;
+    checkLocks(colors);
   }
 };
 
