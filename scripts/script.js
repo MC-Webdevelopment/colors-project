@@ -45,6 +45,7 @@ const copyModal = document.getElementById("copyModal");
 const libraryModal = document.getElementById("libraryModal");
 const loadedPalletes = document.getElementById("loadedPalletes");
 const span2 = document.getElementsByClassName("close")[1];
+let locked = [false, false, false, false, false];
 
 let randomColors = [];
 const refreshColors = () => {
@@ -59,8 +60,7 @@ const refreshColors = () => {
     colors.innerHTML = "";
 
     let counter = 1;
-    randomColors.forEach(color => {
-
+    randomColors.forEach((color, i) => {
         const colorTitle = document.createElement("div");
         colorTitle.setAttribute("id", color);
         colorTitle.innerHTML = color.toUpperCase();
@@ -71,26 +71,92 @@ const refreshColors = () => {
             colorTitle.style.border = "2px solid white";
         }
         const newLock = document.createElement("i");
-        newLock.setAttribute("class", "fas fa-lock-open")
+        if (i == 0) {
+            if (locked[0] == false) newLock.setAttribute("class", "fas fa-lock-open");
+            if (locked[0] == true) newLock.setAttribute("class", "fas fa-lock");
+        } else if (i == 1) {
+            if (locked[1] == false) newLock.setAttribute("class", "fas fa-lock-open");
+            if (locked[1] == true) newLock.setAttribute("class", "fas fa-lock");
+        } else if (i == 2) {
+            if (locked[2] == false) newLock.setAttribute("class", "fas fa-lock-open");
+            if (locked[2] == true) newLock.setAttribute("class", "fas fa-lock");
+        } else if (i == 3) {
+            if (locked[3] == false) newLock.setAttribute("class", "fas fa-lock-open");
+            if (locked[3] == true) newLock.setAttribute("class", "fas fa-lock");
+        } else if (i == 4) {
+            if (locked[4] == false) newLock.setAttribute("class", "fas fa-lock-open");
+            if (locked[4] == true) newLock.setAttribute("class", "fas fa-lock");
+        }
         newLock.setAttribute("id", color + "lock");
+        newLock.style.width = "min-content";
+        newLock.style.margin = "0px auto";
+        firstTime = false;
         if (lightOrDark(color) == "dark") newLock.style.color = "white";
-
         const newColor = document.createElement("div");
         newColor.setAttribute("class", "colorDiv");
         newColor.style.backgroundColor = color.toUpperCase();
-
         newColor.append(colorTitle);
         newColor.append(newLock);
         colors.append(newColor);
-        counter++;
     });
 
     colors.addEventListener("click", (e) => {
         if (e.target.localName == "i") {
-            // lockerChange();
+            if (e.target.id == randomColors[0] + "lock") {
+                if (locked[0] == false) {
+                    e.target.setAttribute("class", "fas fa-lock");
+                    locked[0] = true;
+                } else if (locked[0] == true) {
+                    e.target.setAttribute("class", "fas fa-lock-open");
+                    locked[0] = false;
+                } else {
+                    console.log("There is an error with lock1!");
+                }
+            } else if (e.target.id == randomColors[1] + "lock") {
+                if (locked[1] == false) {
+                    e.target.setAttribute("class", "fas fa-lock");
+                    locked[1] = true;
+                } else if (locked[1] == true) {
+                    e.target.setAttribute("class", "fas fa-lock-open");
+                    locked[1] = false;
+                } else {
+                    console.log("There is an error with lock2!");
+                }
+            } else if (e.target.id == randomColors[2] + "lock") {
+                if (locked[2] == false) {
+                    e.target.setAttribute("class", "fas fa-lock");
+                    locked[2] = true;
+                } else if (locked[2] == true) {
+                    e.target.setAttribute("class", "fas fa-lock-open");
+                    locked[2] = false;
+                } else {
+                    console.log("There is an error with lock3!");
+                }
+            } else if (e.target.id == randomColors[3] + "lock") {
+                if (locked[3] == false) {
+                    e.target.setAttribute("class", "fas fa-lock");
+                    locked[3] = true;
+                } else if (locked[3] == true) {
+                    e.target.setAttribute("class", "fas fa-lock-open");
+                    locked[3] = false;
+                } else {
+                    console.log("There is an error with lock4!");
+                }
+            } else if (e.target.id == randomColors[4] + "lock") {
+                if (locked[4] == false) {
+                    e.target.setAttribute("class", "fas fa-lock");
+                    locked[4] = true;
+                } else if (locked[4] == true) {
+                    e.target.setAttribute("class", "fas fa-lock-open");
+                    locked[4] = false;
+                } else {
+                    console.log("There is an error with lock5!");
+                }
+            } else {
+                console.log("There is an error with the lock elements!");
+            }
         }
         if (e.target.localName == "div") copyFunction(e.target.id);
-
     })
 }
 generateButton.addEventListener("click", refreshColors);
@@ -192,8 +258,3 @@ libraryButton.onclick = function () {
 span2.onclick = function () {
     libraryModal.style.display = "none";
 }
-
-// let locked = false;
-// function lockerChange() {
-
-// }
