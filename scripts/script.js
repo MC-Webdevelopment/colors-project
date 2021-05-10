@@ -99,13 +99,14 @@ const loadLibrary = () => {
   getLibrary && (library = getLibrary);
 
   pallets.innerHTML = "";
-  library.forEach((pallet) => {
+  library.forEach((pallet, i) => {
     const palletItem = document.createElement("div");
     const palletColors = document.createElement("div");
     const selectBtn = document.createElement("button");
 
     selectBtn.onclick = () => {
-      colors = pallet.colors;
+      const originalLibrary = JSON.parse(localStorage.getItem("library"));
+      colors = originalLibrary[i].colors;
       updateColors(colors);
       togglePanel("library");
     };
