@@ -130,7 +130,6 @@ section {
 }
 #color-library {
   display: none;
-  display: none;
   background-color: white;
   width: 600px;
   height: 330px;
@@ -140,7 +139,7 @@ section {
   border-radius: 25px;
   font-size: 15px;
   text-align: center;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 #color-library-close {
   background-color: rgb(78, 78, 78);
