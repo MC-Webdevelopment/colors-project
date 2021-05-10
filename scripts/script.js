@@ -94,6 +94,7 @@ const loadLibrary = () => {
   const getLibrary = JSON.parse(localStorage.getItem("library"));
   getLibrary && (library = getLibrary);
 
+  pallets.innerHTML = "";
   library.forEach((pallet) => {
     const palletItem = document.createElement("div");
     const palletColors = document.createElement("div");
@@ -103,7 +104,6 @@ const loadLibrary = () => {
       colors = pallet.colors;
       updateColors(colors);
       togglePanel("library");
-      checkLocks(colors);
     };
 
     selectBtn.classList.add(`pallet-select-btn`);
