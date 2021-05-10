@@ -41,39 +41,53 @@ button:hover {
 }
 
 section {
-    display: none;
-    position: fixed;
-    padding-top: 100px;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.582);
-    animation-name: savePanelTransition;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
+  display: none;
+  position: fixed;
+  padding-top: 100px;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.582);
+  animation-name: savePanelTransition;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
 }
 #color-save {
-    display: none;
-    background-color: white;
-    width: 450px;
-    height: 230px;
-    z-index: 1;
-    margin:  auto;
-    margin-top: 120px;
-    border-radius: 25px;
-    font-size: 15px;
-    text-align: center;
-    animation-name: savePanelTransition;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
+  display: none;
+  background-color: white;
+  width: 450px;
+  height: 230px;
+  z-index: 1;
+  margin: auto;
+  margin-top: 120px;
+  border-radius: 25px;
+  font-size: 15px;
+  text-align: center;
+  animation-name: savePanelTransition;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
 }
 .pallet {
   padding: 10px;
   color: rgb(78, 78, 78);
 }
+.pallet-colors {
+  width: 50px;
+  height: 80px;
+}
+
+.pallet-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pallet-item div {
+  display: flex;
+}
+
 #popUp-body {
   display: flex;
   flex-direction: column;
@@ -103,18 +117,18 @@ section {
   color: white;
 }
 #color-library {
-    display: none;
-    display: none;
-    background-color: white;
-    width: 600px;
-    height: 330px;
-    z-index: 1;
-    margin:  auto;
-    margin-top: 75px;
-    border-radius: 25px;
-    font-size: 15px;
-    text-align: center;
-    overflow: scroll;
+  display: none;
+  display: none;
+  background-color: white;
+  width: 600px;
+  height: 330px;
+  z-index: 1;
+  margin: auto;
+  margin-top: 75px;
+  border-radius: 25px;
+  font-size: 15px;
+  text-align: center;
+  overflow: scroll;
 }
 #color-library-close {
   background-color: rgb(78, 78, 78);
@@ -129,18 +143,18 @@ section {
   background-color: rgb(1, 1, 49);
 }
 #save-hexCode {
-    display: none;
-    background-color: white;
-    width: 450px;
-    height: 200px;
-    z-index: 1;
-    margin:  auto;
-    margin-top: 150px;
-    border-radius: 25px;
-    font-size: 15px;
-    text-align: center;
+  display: none;
+  background-color: white;
+  width: 450px;
+  height: 200px;
+  z-index: 1;
+  margin: auto;
+  margin-top: 150px;
+  border-radius: 25px;
+  font-size: 15px;
+  text-align: center;
 }
-#copied-clipboard{
+#copied-clipboard {
   padding: 25px;
   color: rgb(78, 78, 78);
   font-weight: bold;
