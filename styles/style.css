@@ -1,0 +1,197 @@
+@keyframes savePanelTransition {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+button:hover {
+  cursor: pointer;
+}
+
+#colors {
+  width: 100%;
+  height: 540px;
+  display: flex;
+  flex-direction: row;
+}
+.color-box {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+.lock-btn {
+  border: none;
+  background-color: transparent;
+  margin-bottom: 80px;
+}
+.hex-number {
+  margin-top: 80px;
+  color: white;
+  text-shadow: 2px 2px 3px black;
+}
+
+section {
+  display: none;
+  position: fixed;
+  padding-top: 100px;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.582);
+  animation-name: savePanelTransition;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+}
+#color-save {
+  display: none;
+  background-color: white;
+  width: 450px;
+  height: 230px;
+  z-index: 1;
+  margin: auto;
+  margin-top: 120px;
+  border-radius: 25px;
+  font-size: 15px;
+  text-align: center;
+  animation-name: savePanelTransition;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+}
+.pallet {
+  padding: 10px;
+  color: rgb(78, 78, 78);
+}
+.pallet-colors {
+  width: 50px;
+  height: 80px;
+}
+
+.pallet-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.pallet-item div {
+  display: flex;
+}
+
+.pallet-select-btn {
+  background-color: rgb(1, 1, 49);
+  color: white;
+  border: none;
+}
+.pallet-name {
+  padding: 10px;
+  color: rgb(78, 78, 78);
+}
+#popUp-body {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+#color-save-close {
+  background-color: rgb(78, 78, 78);
+  color: white;
+  padding: 15px;
+  border: none;
+  float: right;
+  border-radius: 0px 15px 0 6px;
+}
+#color-save-input {
+  height: 35px;
+  width: 220px;
+}
+#save-color-btn {
+  background-color: rgb(1, 1, 49);
+  text-align: center;
+  padding: 10px 35px;
+  border-radius: 10px;
+  margin-top: 30px;
+  border: none;
+  color: white;
+}
+#color-library {
+  display: none;
+  background-color: white;
+  width: 600px;
+  height: 330px;
+  z-index: 1;
+  margin: auto;
+  margin-top: 75px;
+  border-radius: 25px;
+  font-size: 15px;
+  text-align: center;
+  overflow-y: scroll;
+}
+#color-library-close {
+  background-color: rgb(78, 78, 78);
+  color: white;
+  padding: 16px;
+  border: none;
+  float: right;
+  border-radius: 0px 0px 0 6px;
+}
+#color-save-close:hover,
+#color-library-close:hover {
+  background-color: rgb(1, 1, 49);
+}
+#save-hexCode {
+  display: none;
+  background-color: white;
+  width: 450px;
+  height: 200px;
+  z-index: 1;
+  margin: auto;
+  margin-top: 150px;
+  border-radius: 25px;
+  font-size: 15px;
+  text-align: center;
+}
+#copied-clipboard {
+  padding: 25px;
+  color: rgb(78, 78, 78);
+  font-weight: bold;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.icon-btn {
+  margin: 40px;
+}
+#Library,
+#generate,
+#save {
+  background-color: rgb(1, 1, 49);
+  text-align: center;
+  padding: 14px 25px;
+  border-radius: 15px;
+  color: white;
+  border: none;
+}
