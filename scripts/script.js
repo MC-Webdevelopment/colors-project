@@ -18,20 +18,7 @@ function lightOrDark(color) {
     } else {
         return 'dark';
     }
-}
 
-function copyFunction(id) {
-    var text = document.getElementById(id).innerText;
-    var elem = document.createElement("textarea");
-    document.body.appendChild(elem);
-    elem.value = text;
-    elem.select();
-    document.execCommand("copy");
-    document.body.removeChild(elem);
-    copyModal.style.display = "block";
-    setTimeout(() => {
-        copyModal.style.display = "none";
-    }, 2000)
 }
 
 const colors = document.querySelector("#colors");
@@ -45,20 +32,27 @@ const copyModal = document.getElementById("copyModal");
 const libraryModal = document.getElementById("libraryModal");
 const loadedPalletes = document.getElementById("loadedPalletes");
 const span2 = document.getElementsByClassName("close")[1];
+const loadModal = document.getElementById("loadModal");
+const loadedText = document.getElementById("loadedText");
+
 let randomColors = [];
 let locked = [false, false, false, false, false];
 const refreshColors = () => {
+
     colors.innerHTML = "";
+
     randomColors.forEach((color, i) => {
+
         const colorTitle = document.createElement("div");
         colorTitle.setAttribute("id", color);
         colorTitle.innerHTML = color.toUpperCase();
-        colorTitle.style.border = "2px solid black";
+        colorTitle.style.border = "3px solid black";
         colorTitle.style.borderRadius = "10px";
         if (lightOrDark(color) == "dark") {
             colorTitle.style.color = "white";
-            colorTitle.style.border = "2px solid white";
+            colorTitle.style.border = "3px solid white";
         }
+
         const newLock = document.createElement("i");
         if (i == 0) {
             if (locked[0] == false) newLock.setAttribute("class", "fas fa-lock-open");
@@ -79,17 +73,21 @@ const refreshColors = () => {
         newLock.setAttribute("id", color + "lock");
         newLock.style.width = "min-content";
         newLock.style.margin = "0px auto";
-        firstTime = false;
         if (lightOrDark(color) == "dark") newLock.style.color = "white";
+
         const newColor = document.createElement("div");
         newColor.setAttribute("class", "colorDiv");
         newColor.style.backgroundColor = color.toUpperCase();
+
         newColor.append(colorTitle);
         newColor.append(newLock);
         colors.append(newColor);
+
     });
+
 }
 generateButton.addEventListener("click", () => {
+
     for (let i = 0; i < 5; i++) {
         if (locked[i] == false) {
             randomColors[i] = "#000000".replace(/0/g, function () {
@@ -98,7 +96,9 @@ generateButton.addEventListener("click", () => {
         }
     }
     refreshColors();
+
 });
+
 for (let i = 0; i < 5; i++) {
     if (locked[i] == false) {
         randomColors[i] = "#000000".replace(/0/g, function () {
@@ -107,8 +107,11 @@ for (let i = 0; i < 5; i++) {
     }
 }
 refreshColors();
+
 colors.addEventListener("click", (e) => {
+    console.log(e.target);
     if (e.target.localName == "i") {
+
         if (e.target.id == randomColors[0] + "lock") {
             if (locked[0] == false) {
                 e.target.setAttribute("class", "fas fa-lock");
@@ -162,8 +165,11 @@ colors.addEventListener("click", (e) => {
         } else {
             console.log("There is an error with the lock elements!");
         }
+
     }
+
     if (e.target.id.length == 7) {
+
         var text = document.getElementById(e.target.id).innerText;
         var elem = document.createElement("textarea");
         document.body.appendChild(elem);
@@ -175,8 +181,11 @@ colors.addEventListener("click", (e) => {
         setTimeout(() => {
             copyModal.style.display = "none";
         }, 2000);
+
     }
+
 });
+
 saveButton.onclick = function () {
     saveModal.style.display = "block";
 }
@@ -194,82 +203,110 @@ window.onclick = function (e) {
 }
 
 savePallete.onclick = function () {
-    const palleteName = document.getElementById("palleteName").value;
-    if (palleteName in localStorage) alert("Name already exists!\nPlease write a different name!")
+
+    const palleteName = document.getElementById("palleteName");
+    if (palleteName.value in localStorage) alert("Name already exists!\nPlease write a different name!")
+    else if (palleteName.value == "") alert("Please enter a name!");
     else {
-        randomColors += "," + palleteName;
-        localStorage.setItem(palleteName, randomColors);
+        randomColors.push(palleteName.value);
+        localStorage.setItem(palleteName.value, randomColors);
         saveModal.style.display = "none";
+        palleteName.value = "";
+        randomColors = randomColors.slice(0, 5);
     }
+
 }
 
 libraryButton.onclick = function () {
 
-    loadedPalletes.innerHTML = "";
+    if (localStorage.length == 0) alert("You haven't saved anything!")
+    else {
 
-    for (let i = 0; i < localStorage.length; i++) {
-        console.log(localStorage.getItem(localStorage.key(i)));
-        const loadedItem = localStorage.getItem(localStorage.key(i)).split(",");
+        loadedPalletes.innerHTML = "";
 
-        const loadedPallete = document.createElement("div");
-        loadedPallete.setAttribute("class", "loadedItem");
+        for (let i = 0; i < localStorage.length; i++) {
 
-        const loadedPalleteName = document.createElement("span");
-        loadedPalleteName.style.display = "inline-block";
-        loadedPalleteName.style.width = "25%";
-        loadedPalleteName.style.overflowWrap = "anywhere";
-        loadedPalleteName.innerHTML = localStorage.key(i) + ":";
+            const loadedItem = localStorage.getItem(localStorage.key(i)).split(",");
 
-        const loadedPalleteColorList = document.createElement("div");
-        loadedPalleteColorList.setAttribute("class", "loadedPallete");
+            const loadedPallete = document.createElement("div");
+            loadedPallete.setAttribute("class", "loadedItem");
 
-        const fiveColorsContainer = document.createElement("span");
-        fiveColorsContainer.style.display = "inline-block";
-        fiveColorsContainer.style.width = "50%";
-        fiveColorsContainer.style.height = "100%";
+            const loadedPalleteName = document.createElement("span");
+            loadedPalleteName.style.display = "inline-block";
+            loadedPalleteName.style.width = "25%";
+            loadedPalleteName.style.overflowWrap = "anywhere";
+            loadedPalleteName.innerHTML = localStorage.key(i) + ":";
 
-        const loadedPalleteColor1 = document.createElement("div");
-        loadedPalleteColor1.setAttribute("class", "palleteColor");
-        loadedPalleteColor1.style.backgroundColor = loadedItem[0];
+            const loadedPalleteColorList = document.createElement("div");
+            loadedPalleteColorList.setAttribute("class", "loadedPallete");
+            loadedPalleteColorList.style.width = "50%";
 
-        const loadedPalleteColor2 = document.createElement("div");
-        loadedPalleteColor2.setAttribute("class", "palleteColor");
-        loadedPalleteColor2.style.backgroundColor = loadedItem[1];
+            const loadedPalleteColor1 = document.createElement("div");
+            loadedPalleteColor1.setAttribute("class", "palleteColor");
+            loadedPalleteColor1.style.backgroundColor = loadedItem[0];
 
-        const loadedPalleteColor3 = document.createElement("div");
-        loadedPalleteColor3.setAttribute("class", "palleteColor");
-        loadedPalleteColor3.style.backgroundColor = loadedItem[2];
+            const loadedPalleteColor2 = document.createElement("div");
+            loadedPalleteColor2.setAttribute("class", "palleteColor");
+            loadedPalleteColor2.style.backgroundColor = loadedItem[1];
 
-        const loadedPalleteColor4 = document.createElement("div");
-        loadedPalleteColor4.setAttribute("class", "palleteColor");
-        loadedPalleteColor4.style.backgroundColor = loadedItem[3];
+            const loadedPalleteColor3 = document.createElement("div");
+            loadedPalleteColor3.setAttribute("class", "palleteColor");
+            loadedPalleteColor3.style.backgroundColor = loadedItem[2];
 
-        const loadedPalleteColor5 = document.createElement("div");
-        loadedPalleteColor5.setAttribute("class", "palleteColor");
-        loadedPalleteColor5.style.backgroundColor = loadedItem[4];
+            const loadedPalleteColor4 = document.createElement("div");
+            loadedPalleteColor4.setAttribute("class", "palleteColor");
+            loadedPalleteColor4.style.backgroundColor = loadedItem[3];
 
-        const loadedPalleteLoad = document.createElement("span");
-        loadedPalleteLoad.setAttribute("id", localStorage.key(i))
-        loadedPalleteLoad.setAttribute("class", "loadButton");
-        loadedPalleteLoad.innerHTML = "Load";
+            const loadedPalleteColor5 = document.createElement("div");
+            loadedPalleteColor5.setAttribute("class", "palleteColor");
+            loadedPalleteColor5.style.backgroundColor = loadedItem[4];
 
-        loadedPalleteColorList.append(loadedPalleteColor1);
-        loadedPalleteColorList.append(loadedPalleteColor2);
-        loadedPalleteColorList.append(loadedPalleteColor3);
-        loadedPalleteColorList.append(loadedPalleteColor4);
-        loadedPalleteColorList.append(loadedPalleteColor5);
+            const loadedPalleteLoad = document.createElement("span");
+            loadedPalleteLoad.setAttribute("id", localStorage.key(i))
+            loadedPalleteLoad.setAttribute("class", "loadButton");
+            loadedPalleteLoad.innerHTML = "Load";
 
-        fiveColorsContainer.append(loadedPalleteColorList);
+            loadedPalleteColorList.append(loadedPalleteColor1);
+            loadedPalleteColorList.append(loadedPalleteColor2);
+            loadedPalleteColorList.append(loadedPalleteColor3);
+            loadedPalleteColorList.append(loadedPalleteColor4);
+            loadedPalleteColorList.append(loadedPalleteColor5);
 
-        loadedPallete.append(loadedPalleteName);
-        loadedPallete.append(fiveColorsContainer);
-        loadedPallete.append(loadedPalleteLoad);
 
-        loadedPalletes.append(loadedPallete)
-    };
+            loadedPallete.append(loadedPalleteName);
+            loadedPallete.append(loadedPalleteColorList);
+            loadedPallete.append(loadedPalleteLoad);
 
-    libraryModal.style.display = "block";
+            loadedPalletes.append(loadedPallete);
+
+        }
+
+        libraryModal.style.display = "block";
+
+    }
+
 }
+
 span2.onclick = function () {
     libraryModal.style.display = "none";
 }
+
+loadedPalletes.addEventListener("click", (e) => {
+
+    let clickedItem = e.target;
+
+    if (clickedItem.className == "loadButton") {
+
+        randomColors = localStorage.getItem(clickedItem.id).split(",");
+        loadedText.innerHTML = randomColors[5] + " Color Pallete Loaded ✔!";
+        randomColors = randomColors.slice(0, 5);
+        refreshColors();
+        libraryModal.style.display = "none";
+        loadModal.style.display = "block";
+        setTimeout(() => {
+            loadModal.style.display = "none";
+        }, 2000);
+
+    }
+
+});

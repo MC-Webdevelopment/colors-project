@@ -1,15 +1,19 @@
 html,
 body {
+
     height: 100%;
 }
+
 * {
     text-align: center;
 }
+
 #colors {
     display: flex;
     width: 100%;
     height: 75%;
 }
+
 .colorDiv {
     display: flex;
     flex-direction: column;
@@ -18,19 +22,23 @@ body {
     width: 20%;
     font-size: xx-large;
 }
+
 .colorDiv div {
     width: 50%;
     margin: 0px auto;
 }
+
 .colorDiv div:hover,
 i:hover {
     cursor: pointer;
 }
+
 #buttons div p {
     color: grey;
     font-size: xx-large;
     margin: 15px;
 }
+
 button {
     width: 80px;
     height: 80px;
@@ -40,18 +48,21 @@ button {
     border: none;
     border-radius: 10px;
 }
+
 button:hover {
     background-color: white;
     border: 2px solid black;
     color: black;
     cursor: pointer;
 }
+
 #buttons {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     height: 25%;
 }
+
 .loadedItem {
     height: 50px;
     display: flex;
@@ -59,14 +70,17 @@ button:hover {
     align-items: center;
     margin: 10px auto;
 }
+
 .loadedPallete {
     display: flex;
     height: 100%;
 }
+
 .palleteColor {
     height: 100%;
     width: 20%;
 }
+
 .loadButton {
     display: inline-block;
     background-color: black;
@@ -78,12 +92,14 @@ button:hover {
     height: 50px;
     line-height: 50px;
 }
+
 .loadButton:hover {
     background-color: white;
     border: 1px solid black;
     color: black;
     cursor: pointer;
 }
+
 .modal {
     display: none;
     position: fixed;
@@ -96,8 +112,9 @@ button:hover {
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
 }
+
 .modal-content {
-    background-color: #FEFEFE;
+    background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
@@ -105,10 +122,12 @@ button:hover {
     border: none;
     border-radius: 25px;
 }
+
 .modal-content p {
     color: black;
     font-size: x-large;
 }
+
 .modal-content input {
     height: 40px;
     width: 60%;
@@ -116,6 +135,7 @@ button:hover {
     border-radius: 10px;
     border: 1px dashed grey;
 }
+
 .modal-content button {
     line-height: 40px;
     height: 20%;
@@ -123,18 +143,21 @@ button:hover {
     font-size: large;
     border: 2px white solid;
 }
+
 .modal-content button:hover {
     background-color: white;
     border: 2px solid black;
     color: black;
     cursor: pointer;
 }
+
 .close {
     color: red;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
+
 .close:hover,
 .close:focus {
     color: black;
