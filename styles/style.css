@@ -83,11 +83,23 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 5px;
+  overflow: hidden;
+  border-radius: 20px;
 }
 .pallet-item div {
   display: flex;
 }
 
+.pallet-select-btn {
+  background-color: rgb(1, 1, 49);
+  color: white;
+  border: none;
+}
+.pallet-name {
+  padding: 10px;
+  color: rgb(78, 78, 78);
+}
 #popUp-body {
   display: flex;
   flex-direction: column;
