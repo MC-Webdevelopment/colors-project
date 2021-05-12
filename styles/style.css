@@ -1,49 +1,92 @@
 .container{
     width: 100%;
     margin: auto;
-    background-color: rgba(0, 0, 0, 0.199);
+    
+    
 }
 .colores-div{
     display: flex;
     flex-direction: row;
     height: 650px;
-    width: 60%;
+    width: 80%;
     margin: auto;
+    position: relative;
+    margin-left: 300px;
+    
+    
 }
 .color{
     width: 200px;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-right: 15px;
+    margin-left: 15px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+
+
 }
-.color-1{
-    background-color: aqua;
-}
-.color-2{
-    background-color:rebeccapurple;
-}
-.color-3{
-    background-color: red;
-}
-.color-4{
-    background-color: blue;
-}
-.color-5{
-    background-color: yellow;
-    
-}
+
+
 .buttons-div{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: 50px ;
+    margin: 10px ;
 }
 .buttons-div button{
-    margin: 20px 150px 20px 150px;
-    padding: 10px 20px 10px;
+    margin: 5px 130px 5px 130px;
+    padding: 10px 20px 10px 20px;
+    background-color: black;
+    box-shadow: 5px 5px 5px #aaaaaa;
+    color: white;
+    border-radius: 10%;
+    margin-top: 50px;
 }
 .like-icon{
     font-size: 30px;
+}
+#color-list {
+    display: none;
+    list-style: none;
+}
+#color-list li{
+    margin-right: 20px;
+}
+.color-list-main{
+    border: 1px solid black;
+    width: 15%;
+    height: 650px;
+    display: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: auto;
+}
+.save-modul{
+    border-radius: 15px 50px 30px 5px;
+    border-radius: 50px 15px 5px 50px;
+    width: 20%;
+    margin-left: 600px;
+    margin-top: 150px;
+    height: 300px;
+    display: none;
+    background-color: white;
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#color-name-input{
+    padding: 20px 10px 20px 10px;
+    margin: 5px;;
+}
+#save-module-btn{
+    padding: 20px;
+    border-radius: 50%;
+    margin-top: 10px;
+    background-color: black;
+    color: white;
 }

@@ -1,5 +1,35 @@
 # Welcome! 👋
 
+li.innerHTML =`<table><tr>
+ <td style="background-color:${JSON.parse(localStorage.getItem(i)).hexa1};height:50px;width:500px;"></td>
+ <td style="background-color:${JSON.parse(localStorage.getItem(i)).hexa2};height:50px;width:500px;"></td>
+ <td style="background-color:${JSON.parse(localStorage.getItem(i)).hexa3};height:50px;width:500px;"></td>
+ <td style="background-color:${JSON.parse(localStorage.getItem(i)).hexa4};height:50px;width:500px;"></td>
+ <td style="background-color:${JSON.parse(localStorage.getItem(i)).hexa};height:50px;width:500px;"></td>
+ </tr></table>`;
+ 
+
+ li.innerHTML =`<table><tr>
+ <td style="background-color:${JSON.parse(localStorage.getItem(i)).hexa1};height:50px;width:500px;"></td>
+ <td style="background-color:${JSON.parse(localStorage.getItem(i)).hexa2};height:50px;width:500px;"></td>
+ <td style="background-color:${JSON.parse(localStorage.getItem(i)).hexa3};height:50px;width:500px;"></td>
+ <td style="background-color:${JSON.parse(localStorage.getItem(i)).hexa4};height:50px;width:500px;"></td>
+ <td style="background-color:${JSON.parse(localStorage.getItem(i)).hexa5};height:50px;width:500px;"></td>
+ </tr></table>`;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Your challenge is to build out this cool color generating website that helps the user to pick a color palette for their designs!
  
 ### Your users should be able to:
@@ -11,7 +41,7 @@ Your challenge is to build out this cool color generating website that helps the
 ![3](https://user-images.githubusercontent.com/32653855/117524628-c6492580-afc6-11eb-8a58-8460081ad5ec.png)
 
 - Save color palette with a name to local storage
-![4](https://user-images.githubusercontent.com/32653855/117524683-0b6d5780-afc7-11eb-9e55-9be924180067.png)
+![4](0)
 
 - User should be able to see all of their saved palettes in their library and when clicked on one, it should update the containers to the palette selected.
  ![5](https://user-images.githubusercontent.com/32653855/117524756-83d41880-afc7-11eb-9cd7-5976457155ba.png)
